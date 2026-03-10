@@ -12,7 +12,7 @@ When installed, this skill enables Claude to walk any user through the full Gray
 
 ### What the Skill Covers
 1. Prerequisite checks (Graylog 7.0+, MCP enabled, API token created)
-2. Guided setup of a dedicated read-only MCP user and API token
+2. Guided setup of assigning the MCP Server role to an existing user and generating an API token
 3. Base64 auth header generation
 4. Client-specific configuration output
 5. Verification steps and first prompts to test the connection

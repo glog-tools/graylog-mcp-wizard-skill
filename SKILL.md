@@ -39,7 +39,7 @@ Ask the user the following. You can ask all of these in one message:
 
 4. **Have they already:**
    - Enabled MCP in Graylog? (*System > Configurations > MCP → Enable MCP → On*)
-   - Created a dedicated MCP user and generated an API token?
+   - Assigned the **MCP Server role** to an existing user and generated an API token for them?
 
 If the answer to either prerequisite is "no" or "not sure", walk them through the prerequisites first (see **Prerequisites Guide** below) before proceeding.
 
@@ -52,7 +52,7 @@ Once prerequisites are confirmed, collect:
 - **Graylog base URL** — e.g., `http://localhost:9000` or `https://company.graylog.cloud`
   - Remind them: no trailing slash, include the port if self-hosted (default: 9000)
 - **API token** — the raw token string (not yet base64-encoded)
-  - Remind them: this should be for a **dedicated read-only MCP user**, not an admin account
+  - Remind them: this should be the token for a **user with the MCP Server role**, not an admin account
 
 Then generate the base64-encoded auth header value for them:
 
