@@ -74,7 +74,7 @@ README.md                     # This file
 
 ## Security Notes
 
-- Always use a **dedicated read-only Graylog user** for MCP — never reuse admin credentials
+- Always use a **limited-access user with the MCP Server role** for MCP — never use admin credentials
 - Graylog MCP is currently in **beta** and not recommended for production environments
 - MCP respects Graylog's existing user roles — Claude can only access what the token's user is permitted to see
 - Do not connect more than one Graylog instance at a time

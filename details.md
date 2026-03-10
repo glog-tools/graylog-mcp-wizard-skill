@@ -68,7 +68,8 @@ Once connected, Claude has access to the following Graylog tools. Some require s
 - Try: `claude mcp remove graylog` then re-add
 
 ### Authentication errors (401/403)
-- Token may have expired or been revoked — generate a new one in *System > Users and Teams > Tokens*
+- Token may have expired or been revoked — generate a new one via *System > Users and Teams → More > Edit tokens*
+- Ensure the user has the **MCP Server role** assigned under their user settings
 - Ensure the user account is active and not locked
 - Verify the base64 encoding includes the `:token` suffix before encoding
 

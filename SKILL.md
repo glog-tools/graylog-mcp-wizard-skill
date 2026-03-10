@@ -147,7 +147,7 @@ If tools don't appear, point them to the **Troubleshooting** section in the refe
 
 Before wrapping up, always share these reminders:
 
-- Use a **dedicated read-only user** for MCP — never reuse admin credentials
+- Use a **limited-access user with the MCP Server role** — never use admin credentials
 - Graylog MCP is currently in **beta** — not recommended for production environments
 - Only connect **one Graylog instance at a time** per client
 - Review what data your AI model has access to before enabling in sensitive environments
@@ -159,17 +159,22 @@ Before wrapping up, always share these reminders:
 
 Walk the user through these if they haven't completed them yet.
 
-### 1. Create a Dedicated MCP User
+### 1. Assign the MCP Role to an Existing User
 1. In Graylog, go to *System > Users and Teams*
-2. Create a new user (e.g., `mcp-readonly`)
-3. Assign a **read-only role** — do not grant admin permissions
-4. Note the username
+2. Locate the user you want to use for MCP access
+3. Select *Edit* from the *More* drop-down menu
+4. Assign the **MCP Server** role to the user
+5. Save the changes
 
-### 2. Generate an API Token
-1. Go to *System > Users and Teams > Tokens*
-2. Select the MCP user
-3. Click *Create Token*, give it a name (e.g., `claude-mcp`)
-4. Copy and save the token — it is only shown once
+> ⚠️ Use a limited-access user — do not use an administrator account for MCP.
+
+### 2. Generate an API Token for That User
+1. Go to *System > Users and Teams*
+2. Locate the same user, then select *Edit tokens* from the *More* drop-down menu
+3. Enter a token name (e.g., `claude-mcp`)
+4. Set a TTL (default is 30 days — adjust as needed)
+5. Click *Create Token*
+6. **Copy and save the token immediately** — it is only shown once and cannot be retrieved later
 
 ### 3. Enable MCP in Graylog
 1. Go to *System > Configurations > MCP*
